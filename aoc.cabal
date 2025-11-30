@@ -51,47 +51,51 @@ common warnings
     ghc-options: -Wall
 
 common shared-deps
-    build-depends:    base, megaparsec, containers, split, unordered-containers, matrix, mtl, hashable, parallel, split, array
+    build-depends:    base, megaparsec, containers, split, unordered-containers, matrix, mtl, hashable, parallel, split, array, HUnit, text, hspec
     default-language: GHC2021
     ghc-options:      -Wall
     hs-source-dirs:   app
 
 executable day1
         import: shared-deps
-        main-is: Day1.hs
+        main-is: Day1_2024.hs
 
 executable day2
         import: shared-deps
-        main-is: Day2.hs
+        main-is: Day2_2024.hs
 
 executable day3
         import: shared-deps
-        main-is: Day3.hs
+        main-is: Day3_2024.hs
 
 executable day4
         import: shared-deps
-        main-is: Day4.hs
+        main-is: Day4_2024.hs
 
 executable day5
         import: shared-deps
-        main-is: Day5.hs
+        main-is: Day5_2024.hs
 
 executable day6
         import: shared-deps
-        main-is: Day6.hs
+        main-is: Day6_2024.hs
 
 executable day7
         import: shared-deps
-        main-is: Day7.hs
+        main-is: Day7_2024.hs
+
+executable day9
+        import: shared-deps
+        main-is: Day9_2024.hs
 
 executable day10
         import: shared-deps
-        main-is: Day10.hs
+        main-is: Day10_2024.hs
 
 executable day11
         import: shared-deps
-        main-is: Day11.hs
+        main-is: Day11_2024.hs
 
 executable day12
         import: shared-deps
-        main-is: Day12.hs
+        main-is: Day12_2024.hs
