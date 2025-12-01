@@ -99,3 +99,7 @@ executable day11
 executable day12
         import: shared-deps
         main-is: Day12_2024.hs
+
+executable day12025
+        import: shared-deps
+        main-is: Day1_2025.hs
