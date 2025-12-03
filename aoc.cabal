@@ -84,10 +84,6 @@ executable day7
         import: shared-deps
         main-is: Day7_2024.hs
 
-executable day9
-        import: shared-deps
-        main-is: Day9_2024.hs
-
 executable day10
         import: shared-deps
         main-is: Day10_2024.hs
@@ -103,3 +99,7 @@ executable day12
 executable day12025
         import: shared-deps
         main-is: Day1_2025.hs
+
+executable  day22025
+        import: shared-deps
+        main-is: Day2_2025.hs
