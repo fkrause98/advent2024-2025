@@ -1,6 +1,7 @@
 module Utils where
 
 import Control.Monad.State
+import Data.Char (digitToInt)
 import Data.List
 import qualified Data.Map as M
 
@@ -52,3 +53,33 @@ addTuples (x, y) (u, v) = (x + u, y + v)
 
 fetch :: (Ord k) => M.Map k v -> k -> Maybe v
 fetch m x = M.lookup x m
+
+buildGrid :: [[Int]] -> M.Map (Int, Int) Int
+buildGrid input =
+    M.fromList
+        [ ((x, y), (input !! x) !! y) | x <- [0 .. (length input) - 1], y <- [0 .. (length $ input !! x) - 1]
+        ]
+
+deltas1 :: [(Int, Int)]
+deltas1 =
+    [ (-1, 0),
+      (-1, -1),
+      (-1, 1),
+      (0, -1),
+      (0, 1),
+      (1, 0),
+      (1, -1),
+      (1, 1)
+    ]
+
+deltas2 :: [(Int, Int)]
+deltas2 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+mapDeltas2 :: (Int, Int) -> [(Int, Int)]
+mapDeltas2 t = map (addTuples t) deltas2
+
+mapDeltas1 :: (Int, Int) -> [(Int, Int)]
+mapDeltas1 t = map (addTuples t) deltas1
+
+digitize :: String -> [Int]
+digitize = map digitToInt
