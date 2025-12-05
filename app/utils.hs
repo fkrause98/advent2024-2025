@@ -46,3 +46,9 @@ memoized f x = do
 
 runMemoized :: (x -> State (M.Map x y) y) -> x -> y
 runMemoized f x = evalState (f x) M.empty
+
+addTuples :: (Int, Int) -> (Int, Int) -> (Int, Int)
+addTuples (x, y) (u, v) = (x + u, y + v)
+
+fetch :: (Ord k) => M.Map k v -> k -> Maybe v
+fetch m x = M.lookup x m
